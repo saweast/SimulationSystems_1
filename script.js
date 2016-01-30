@@ -1,12 +1,14 @@
 
 var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
 
-var a = 0,
-  b = 100,
-  numberOfBars = 100,
-  lengthOfBars = 1,
+
+var a = document.getElementById('start') || 0,
+  b = document.getElementById('end') || 100,
+  numberOfBars = document.getElementById('numberOfBars') || 100,
+  lengthOfBars = document.getElementById('lengthOfBars') || 1,
   step = (b - a) / numberOfBars;
 
+var button = document.getElementById('makeCanvas');
 
 var dataList = makeData(a, b, step, numberOfBars, lengthOfBars);
 var labelsList = makeLabels(a, b, step);
@@ -21,6 +23,8 @@ var barChartData = {
     }]
 }
 
+
+
 window.onload = function() {
   var ctx = document.getElementById("canvas").getContext("2d");
   window.myBar = new Chart(ctx).Bar(barChartData, {
@@ -31,7 +35,7 @@ window.onload = function() {
 function makeLabels(start, end, step) {
   var array = [];
   for (; start < end; start += step) {
-    array.push(start);
+    array.push(start.toFixed(1));
   }
   return array;
 }

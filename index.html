@@ -4,11 +4,19 @@
 	<title>Simulation Systems #1</title>
 	<link rel="stylesheet" href="style.css">
 	<script src='Chart.js'></script>	
-	<script src='script.js'></script>
+	
+<script src='script.js'></script>
 </head>
 <body>
-	<div style="width: 50%">
-		<canvas id="canvas" height="450" width="600"></canvas>
+	<div class="control">
+		<input type="number" id='start' name="a" value="" placeholder="Введите начало">
+		<input type="number" id='end' name="b" value="" placeholder="Введите конец">
+		<input type="number" id='numberOfBars' name="numberOfBars" value="" placeholder="Введите количество точек">
+		<input type="number" id='lengthOfBars' name="lengthOfBars" value="" placeholder="Введите длину точек">
+		<button type="" id="makeCanvas">Нарисовать</button>
+	</div>
+	<div class="graph">
+		<canvas id="canvas"></canvas>
 	</div>
 </body>
 </html>
