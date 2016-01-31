@@ -2,6 +2,8 @@
 var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
 
 $(document).ready(function() {
+  var ctx = document.getElementById("canvas").getContext("2d");
+  var gr = new Chart(ctx);
   $('#makeCanvas').on('click', function() {
     var a = $('#start').val(),
       b = $('#end').val(),
@@ -10,7 +12,7 @@ $(document).ready(function() {
       step = (b - a) / numberOfBars,
       dataList = makeData(+a, +b, +step, +numberOfBars, +lengthOfBars);
       labelsList = makeLabels(+a, +b, +step),
-      barChartData1 = {
+      barChartData = {
         labels : labelsList,
         datasets : [{
             fillColor : "rgba(220,220,220,0.5)",
@@ -20,11 +22,9 @@ $(document).ready(function() {
             data : dataList
         }]
       };
-    var ctx = document.getElementById("canvas").getContext("2d");
-    var gr = new Chart(ctx).Bar(barChartData1, {
+    gr.Bar(barChartData, {
       responsive : true
     });
-
   });
 });
 
@@ -50,7 +50,7 @@ var barChartData = {
 
 function makeLabels(start, end, step) {
   var array = [];
-  for (; start < end; start += step) {
+  for (; start <= end; start += step) {
     array.push(start.toFixed(1));
   }
   return array;
@@ -58,7 +58,7 @@ function makeLabels(start, end, step) {
 
 function makeData(start, end, step, number, length) {
   var array = [];
-  for (; start < end; start += step) {
+  for (; start <= end; start += step) {
     array.push(1 / (Math.PI * Math.sqrt(Math.pow(b, 2) - Math.pow((start-a), 2))));
   }
   return array;

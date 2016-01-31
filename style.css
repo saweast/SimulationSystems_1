@@ -3,3 +3,23 @@
 	width: 70%;
 	margin: 0 auto 10px;
 }
+.control {
+	height: 282px;
+    background: url(task.jpg);
+    background-position: 175px -117px;
+    background-repeat: no-repeat;
+}
+input {
+	display: block;	
+}
+button {
+	height: 2em;
+	font-size: 1.4em;
+	border-radius: 25px;
+	background: blue;
+	color: yellow;
+}
+button:hover {
+	background: yellow;
+	color: blue;
+}
