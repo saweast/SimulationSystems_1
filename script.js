@@ -1,14 +1,11 @@
 
 var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
 
-
 var a = document.getElementById('start') || 0,
   b = document.getElementById('end') || 100,
   numberOfBars = document.getElementById('numberOfBars') || 100,
   lengthOfBars = document.getElementById('lengthOfBars') || 1,
   step = (b - a) / numberOfBars;
-
-var button = document.getElementById('makeCanvas');
 
 var dataList = makeData(a, b, step, numberOfBars, lengthOfBars);
 var labelsList = makeLabels(a, b, step);
@@ -22,8 +19,6 @@ var barChartData = {
       data : dataList
     }]
 }
-
-
 
 window.onload = function() {
   var ctx = document.getElementById("canvas").getContext("2d");
