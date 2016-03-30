@@ -1,16 +1,11 @@
 .graph, .control {
-	display: block;
-	width: 70%;
-	margin: 0 auto 10px;
+	width: 60%;
 }
 .control {
-	height: 282px;
-    background: url(task.jpg);
-    background-position: 175px -117px;
-    background-repeat: no-repeat;
+	float: left;
 }
 input {
-	display: block;	
+	display: inline-block;	
 }
 button {
 	height: 2em;
@@ -22,4 +17,9 @@ button {
 button:hover {
 	background: yellow;
 	color: blue;
+}
+p {
+	width: 80%;
+	margin: 0 auto;
+	text-align: center;
 }
