@@ -20,6 +20,7 @@ $(document).ready(function() {
                     data: dataList
                 }]
             };
+            
         var para = document.createElement("P");                       // Create a <p> element
         var t = document.createTextNode(makeStat(arrayF));      // Create a text node
         para.appendChild(t);                                          // Append the text to <p>
